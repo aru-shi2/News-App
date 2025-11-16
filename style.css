@@ -1,4 +1,39 @@
 nav{
     display: flex;
     justify-content: space-between;
+    background-color: aquamarine;
+    padding: 5px;
+}
+.logo{
+    align-self: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
+.center{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.right{
+    align-self: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.content{
+    display: flex;
+}
+li{
+    display: flex;
+    width: 20%;
+    flex-wrap: wrap;
+}
+ li img{
+    width: 150px;
+}
+.content li h1{
+    font-size: 1.5rem;
+    text-wrap: initial;
+}
+.content li p{
+    font-size: 1rem;
+    wrap
 }
