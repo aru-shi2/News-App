@@ -18,15 +18,18 @@ nav{
     font-weight: bold;
     font-size: 1rem;
 }
-.content{
+ul.content{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 li{
     display: flex;
+    flex-direction: row;
     width: 20%;
     flex-wrap: wrap;
 }
- li img{
+li img{
     width: 150px;
 }
 .content li h1{
@@ -35,5 +38,4 @@ li{
 }
 .content li p{
     font-size: 1rem;
-    wrap
 }
