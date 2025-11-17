@@ -65,3 +65,8 @@ li img{
 .content li p{
     font-size: 1rem;
 }
+.content li button{
+    width: 100%;
+    height: 40px;
+    align-self: flex-end;
+}
