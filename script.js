@@ -1,7 +1,7 @@
 import {api_key} from "./config.js";
 
 document.getElementById("click").addEventListener("click",handleClick);
-function handleClick() {
+
   const data=async() => {
     let a=await fetch(`https://newsapi.org/v2/everything?q=news&apiKey=${api_key}`)
     const res=await a.json()
@@ -28,4 +28,7 @@ function handleClick() {
     
   }
   data()
-} 
+
+  function handleClick() {
+    fg
+  }
