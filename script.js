@@ -3,7 +3,7 @@ import {api_key} from "./config.js";
 document.getElementById("click").addEventListener("click",handleClick);
 document.getElementById("sp1").addEventListener("click",handleFirst);
 document.getElementById("sp2").addEventListener("click",handleSecond);
-// document.getElementById("sp3").addEventListener("click",handleThird);
+document.getElementById("sp3").addEventListener("click",handleThird);
 
 function handleClick() {
     const search=async () => {
@@ -137,4 +137,38 @@ function handleSecond() {
     });
 }
     tech()
+  }  
+
+
+  function handleThird() {
+    const sports=async () => {
+      let b=await fetch(`https://newsapi.org/v2/everything?q=Sports&apiKey=${api_key}`)
+      const result=await b.json()
+      console.log(result)
+
+      document.querySelector("ul").innerHTML=""
+
+      const parent=document.querySelector("ul")
+
+    result.articles.forEach(e => {
+      let el=document.createElement("li")
+      let el1=document.createElement("img")
+      let el2=document.createElement("h1")
+      let el3=document.createElement("p")
+      let btn=document.createElement("button")
+
+    el1.src=e.urlToImage
+    el2.textContent=e.title
+    el3.textContent=e.description
+    btn.textContent="Read More"
+
+    el.appendChild(el1)
+    el.appendChild(el2)
+    el.appendChild(el3)
+    el.appendChild(btn)
+
+    parent.appendChild(el);
+    });
+}
+    sports()
   }  
