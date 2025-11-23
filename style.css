@@ -121,6 +121,9 @@ body {
 }
 
 .content li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 30%; 
   background: #1a1a1f;
   border-radius: 14px;
@@ -148,7 +151,7 @@ body {
   line-height: 1.45;
 }
 
-.readmore {
+.content button{
   margin-top: 12px;
   padding: 12px;
   width: 100%;       
@@ -161,7 +164,7 @@ body {
   transition: 0.3s;
 }
 
-.readmore:hover {
+.content readmore:hover {
   background: #3f3ef5;
 }
 
