@@ -4,18 +4,13 @@ document.getElementById("click").addEventListener("click",handleClick);
 document.getElementById("sp1").addEventListener("click",handleFirst);
 document.getElementById("sp2").addEventListener("click",handleSecond);
 document.getElementById("sp3").addEventListener("click",handleThird);
+document.getElementById("home").addEventListener("click",handleHome);
 
-function handleClick() {
-    const search=async () => {
-      let txt=document.querySelector("input").value
-      let b=await fetch(`https://newsapi.org/v2/everything?q=${txt}&apiKey=${api_key}`)
-      const result=await b.json()
+function showData(articles) {
+    const parent=document.querySelector("ul")
+    document.querySelector("ul").innerHTML=""
 
-      document.querySelector("ul").innerHTML=""
-
-      const parent=document.querySelector("ul")
-
-    result.articles.forEach(e => {
+    articles.forEach(e => {
       let el=document.createElement("li")
       let el1=document.createElement("img")
       let el2=document.createElement("h1")
@@ -39,6 +34,14 @@ function handleClick() {
     })
     });
 }
+
+function handleClick() {
+    const search=async () => {
+      let txt=document.querySelector("input").value
+      let b=await fetch(`https://newsapi.org/v2/everything?q=${txt}&apiKey=${api_key}`)
+      const result=await b.json()
+      showData(result.articles)
+}
      search()
   }
 
@@ -47,33 +50,7 @@ function handleClick() {
     const res=await a.json()
     console.log(res)
 
-    const parent=document.querySelector("ul")
-
-    res.articles.forEach(e => {
-      let el=document.createElement("li")
-      let el1=document.createElement("img")
-      let el2=document.createElement("h1")
-      let el3=document.createElement("p")
-      let btn=document.createElement("button")
-      
-
-    el1.src=e.urlToImage
-    el2.textContent=e.title
-    el3.textContent=e.description
-    btn.textContent="Read More"
-
-    el.appendChild(el1)
-    el.appendChild(el2)
-    el.appendChild(el3)
-    el.appendChild(btn)
-
-    parent.appendChild(el);
-
-    btn.addEventListener("click",()=>{
-      window.open(e.url,"_blank")
-    })
-    });
-    
+    showData(res.articles)
   }
   data() 
 
@@ -83,33 +60,7 @@ function handleFirst() {
       const result=await b.json()
       console.log(result)
 
-      document.querySelector("ul").innerHTML=""
-
-      const parent=document.querySelector("ul")
-
-    result.articles.forEach(e => {
-      let el=document.createElement("li")
-      let el1=document.createElement("img")
-      let el2=document.createElement("h1")
-      let el3=document.createElement("p")
-      let btn=document.createElement("button")
-
-    el1.src=e.urlToImage
-    el2.textContent=e.title
-    el3.textContent=e.description
-    btn.textContent="Read More"
-
-    el.appendChild(el1)
-    el.appendChild(el2)
-    el.appendChild(el3)
-    el.appendChild(btn)
-
-    parent.appendChild(el);
-
-    btn.addEventListener("click",()=>{
-      window.open(e.url,"_blank")
-    })
-    });
+     showData(result.articles)
 }
     en()
   }
@@ -120,34 +71,8 @@ function handleSecond() {
       const result=await b.json()
       console.log(result)
 
-      document.querySelector("ul").innerHTML=""
-
-      const parent=document.querySelector("ul")
-
-    result.articles.forEach(e => {
-      let el=document.createElement("li")
-      let el1=document.createElement("img")
-      let el2=document.createElement("h1")
-      let el3=document.createElement("p")
-      let btn=document.createElement("button")
-
-    el1.src=e.urlToImage
-    el2.textContent=e.title
-    el3.textContent=e.description
-    btn.textContent="Read More"
-
-    el.appendChild(el1)
-    el.appendChild(el2)
-    el.appendChild(el3)
-    el.appendChild(btn)
-
-    parent.appendChild(el);
-
-    btn.addEventListener("click",()=>{
-      window.open(e.url,"_blank")
-    })
-    });
-}
+      showData(result.articles)
+    }
     tech()
   }  
 
@@ -158,33 +83,19 @@ function handleSecond() {
       const result=await b.json()
       console.log(result)
 
-      document.querySelector("ul").innerHTML=""
-
-      const parent=document.querySelector("ul")
-
-    result.articles.forEach(e => {
-      let el=document.createElement("li")
-      let el1=document.createElement("img")
-      let el2=document.createElement("h1")
-      let el3=document.createElement("p")
-      let btn=document.createElement("button")
-
-    el1.src=e.urlToImage
-    el2.textContent=e.title
-    el3.textContent=e.description
-    btn.textContent="Read More"
-
-    el.appendChild(el1)
-    el.appendChild(el2)
-    el.appendChild(el3)
-    el.appendChild(btn)
-
-    parent.appendChild(el);
-
-    btn.addEventListener("click",()=>{
-      window.open(e.url,"_blank")
-    })
-    });
-}
+      showData(result.articles)
+    }
     sports()
   }  
+
+
+  function handleHome() {
+    const d=async() => {
+    let a=await fetch(`https://newsapi.org/v2/everything?q=news&apiKey=${api_key}`)
+    const res=await a.json()
+    console.log(res)
+
+    showData(res.articles)
+  }
+  d() 
+  }
