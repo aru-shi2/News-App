@@ -33,6 +33,10 @@ function handleClick() {
     el.appendChild(btn)
 
     parent.appendChild(el);
+
+    btn.addEventListener("click",()=>{
+      window.open(e.url,"_blank")
+    })
     });
 }
      search()
@@ -101,6 +105,10 @@ function handleFirst() {
     el.appendChild(btn)
 
     parent.appendChild(el);
+
+    btn.addEventListener("click",()=>{
+      window.open(e.url,"_blank")
+    })
     });
 }
     en()
@@ -134,6 +142,10 @@ function handleSecond() {
     el.appendChild(btn)
 
     parent.appendChild(el);
+
+    btn.addEventListener("click",()=>{
+      window.open(e.url,"_blank")
+    })
     });
 }
     tech()
@@ -168,6 +180,10 @@ function handleSecond() {
     el.appendChild(btn)
 
     parent.appendChild(el);
+
+    btn.addEventListener("click",()=>{
+      window.open(e.url,"_blank")
+    })
     });
 }
     sports()
