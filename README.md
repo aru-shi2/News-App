@@ -6,8 +6,10 @@
 A simple news web app built using HTML, CSS, JavaScript and CurrentsAPI.
 Shows Headlines, Technology, Sports, Entertainment, and Search news.
 
-⚠️ Important: CurrentsAPI free plan DOES NOT work on deployed sites (Netlify) because of CORS + MIME errors.
+⚠️ Important: CurrentsAPI free plan DOES NOT work on deployed sites (Netlify) because of CORS + MIME errors. 
 
+🔗 **Screenshot:** 
+<img width="1366" height="642" alt="Screenshot (192)" src="https://github.com/user-attachments/assets/77793bd4-0b42-4132-9424-739372ce8e64" />
 
 ---
 
