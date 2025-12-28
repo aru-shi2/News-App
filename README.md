@@ -47,11 +47,11 @@ Shows Headlines, Technology, Sports, Entertainment, and Search news.
 
 1. Clone the repository
 ```Bash
-git clone <repo-url>
+git clone https://github.com/aru-shi2/News-App
 ```
 2. Open the project folder
 ```Bash
-cd project-folder
+cd News-App
 ```
 3. Add your API key
 
